@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <!-- Title and connecting CSS file -->
+        <title>Create your own Among Us!</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+
+    <body>
+        <!-- Adding the logo image and introduction text  -->
+        <img id="TitleLogo" src="Assets/-\ Background \-/Logo.png"/>
+        <p><i><b>Use the buttons to modify your own Among Us character</b></i></p>
+
+        <!-- Grid container for character customization buttons -->
+        <div class="grid">
+
+            <!-- Left button grid for buttons on the left -->
+            <div class="button-container left">
+                <button onclick="backHat()"> < </button>
+                <button onclick="backSkin()"> < </button>
+                <button onclick="backVisor()"> < </button>
+                <button onclick="backOutfit()"> < </button>
+                <button onclick="backBackpack()"> < </button>
+                <button onclick="backRole()"> < </button>
+            </div>
+
+            <!-- Character customization images -->
+            <img id="SkinPicture" class="character-image" src="Assets/Skins/Skin1.png" style="width: 250px;" />
+            <img id="HatPicture" class="character-image" src="Assets/Hats/Hat1.png" style="width: 250px;">
+            <img id="VisorPicture" class="character-image" src="Assets/Visors/Visor1.png" style="width: 250px;" />
+            <img id="OutfitPicture" class="character-image" src="Assets/Outfits/Outfit1.png" style="width: 250px;" />
+            <img id="BackpackPicture" class="character-image" src="Assets/Backpacks/Backpack1.png" style="width: 250px;" />
+
+            <!-- Right button grid for buttons on the right -->
+            <div class="button-container right">
+                <button onclick="nextHat()"> > </button>
+                <button onclick="nextSkin()"> > </button>
+                <button onclick="nextVisor()"> > </button>
+                <button onclick="nextOutfit()"> > </button>
+                <button onclick="nextBackpack()"> > </button>
+                <button onclick="nextRole()"> > </button>
+            </div>
+        </div>
+
+        <!-- Grid for role image -->
+        <div class="roles-grid">
+            <img id="RolePicture" class="character-image" src="Assets/Roles/Role1.png" style="width: 250px;" />
+        </div>
+
+        <!-- Text for displaying available stat points -->
+        <p><b>Stat Points Available: </b></p>
+        <p id="pointsAvailable"></p>
+        <p><i>Click to increase or decrease your stats</i></p>
+
+        <!-- Button for creating a character (initially hidden until all stat points used) -->
+        <button type="button" id="createCharacterButton" style="display: none;" onclick="createCharacterPage()">Create Character</button>
+
+        <!-- Grid for displaying and adjusting character stats -->
+        <div class="stats-container">
+            <div class="stat-container">
+                <label>HP: <span id="hp">0</span></label>
+                <button type="button" onclick="adjustStat('hp', 1)">+</button>
+                <button type="button" onclick="adjustStat('hp', -1)">-</button>
+            </div>
+        
+            <div class="stat-container">
+                <label>Speed: <span id="speed">0</span></label>
+                <button type="button" onclick="adjustStat('speed', 1)">+</button>
+                <button type="button" onclick="adjustStat('speed', -1)">-</button>
+            </div>
+        
+            <div class="stat-container">
+                <label>Stealth: <span id="stealth">0</span></label>
+                <button type="button" onclick="adjustStat('stealth', 1)">+</button>
+                <button type="button" onclick="adjustStat('stealth', -1)">-</button>
+            </div>
+        
+            <div class="stat-container">
+                <label>Strength: <span id="strength">0</span></label>
+                <button type="button" onclick="adjustStat('strength', 1)">+</button>
+                <button type="button" onclick="adjustStat('strength', -1)">-</button>
+            </div>
+        
+            <div class="stat-container">
+                <label>IQ: <span id="iq">0</span></label>
+                <button type="button" onclick="adjustStat('iq', 1)">+</button>
+                <button type="button" onclick="adjustStat('iq', -1)">-</button>
+            </div>
+        
+            <div class="stat-container">
+                <label>Luck: <span id="luck">0</span></label>
+                <button type="button" onclick="adjustStat('luck', 1)">+</button>
+                <button type="button" onclick="adjustStat('luck', -1)">-</button>
+            </div>
+        </div>
+
+        <!-- Connecting index.html to script.js -->
+        <script src="script.js"></script>
+    </body>
+
+</html>

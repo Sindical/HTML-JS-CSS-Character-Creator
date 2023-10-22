@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <!-- Adding title and linking CSS file -->
+        <title>Character Created!</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+
+    <body class="body2"></body>
+        <!-- Display the logo image, explaination text and background gif -->
+        <img id="TitleLogo" src="Assets/-\ Background \-/Logo.png"/>
+        <h1><b>Character Created!</b></h1>
+
+        <!-- Button that displays the credits when clicked -->
+        <button onclick="creditsButton()"> Credits </button>
+
+        <!-- Grid for displaying character images -->
+        <div class="grid">
+            <img id="SkinPicture" class="character-image" src="Assets/Skins/Skin1.png" style="width: 250px;" />
+            <img id="HatPicture" class="character-image" src="Assets/Hats/Hat1.png" style="width: 250px;">
+            <img id="VisorPicture" class="character-image" src="Assets/Visors/Visor1.png" style="width: 250px;" />
+            <img id="OutfitPicture" class="character-image" src="Assets/Outfits/Outfit1.png" style="width: 250px;" />
+            <img id="BackpackPicture" class="character-image" src="Assets/Backpacks/Backpack1.png" style="width: 250px;" />
+        </div>
+
+        <!-- Grid for displaying role image-->
+        <div class="roles-grid">
+            <img id="RolePicture" class="character-image" src="Assets/Roles/Role1.png" style="width: 250px;" />
+        </div>
+
+        <script>
+            // Functionn to get the images
+            function getQueryParam(parameter) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(parameter);
+            }
+        
+            // Set images in confirm.html based on what was selected in index.html
+            document.getElementById('SkinPicture').src = `Assets/Skins/Skin${getQueryParam('skin')}.png`;
+            document.getElementById('HatPicture').src = `Assets/Hats/Hat${getQueryParam('hat')}.png`;
+            document.getElementById('VisorPicture').src = `Assets/Visors/Visor${getQueryParam('visor')}.png`;
+            document.getElementById('OutfitPicture').src = `Assets/Outfits/Outfit${getQueryParam('outfit')}.png`;
+            document.getElementById('BackpackPicture').src = `Assets/Backpacks/Backpack${getQueryParam('backpack')}.png`;
+            document.getElementById('RolePicture').src = `Assets/Roles/Role${getQueryParam('role')}.png`;
+        </script>
+
+        <!-- Creating a grid and a button for the "Create New Character" buttton -->
+        <div class="create-character-button-container">
+            <button onclick ='newCharacter()'> Create New Character </button>
+        </div>
+
+        <!-- Connecting script.js to confirm.html -->
+        <script src="script.js"></script>
+    </body>
+</html>
